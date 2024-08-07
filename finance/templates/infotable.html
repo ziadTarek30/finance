@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in table %}
+        <tr>
+            <td>{{ item["symbol"] }}</td>
+            <td>{{ item["name"] }}</td>
+            <td>{{ item["shares"] }}</td>
+            <td>{{ item["price"] }}</td>
+            <td>{{ item["total"] }}</td>
+        </tr>
+        {% endfor %}
+        <tfoot>
+            <tr>
+                <td>Cash</td>
+                <td>{{ cashdollar }}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{ grandtotaldollar }}</td>
+            </tr>
+        </tfoot>
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change password
+{% endblock %}
+
+{% block main %}
+    <form action="/changepword" method="post">
+        <input type="password" name="newpassword" placeholder="new password" autocomplete="off">
+        <input type="password" name="confirmation" placeholder="confirm new password" autocomplete="off">
+        <button type="submit">Change password</button>
+    </form>
+{% endblock %}

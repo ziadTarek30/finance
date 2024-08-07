@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post" id="sellform">
+        <input type="number" name="shares" placeholder="number of shares" autocomplete="off">
+        <button type="submit">Sell</button>
+    </form>
+    <select name="symbol" form="sellform">
+        {% for symbol in symbols %}
+        <option value="{{ symbol.symbol }}">{{ symbol.symbol }}</option>
+        {% endfor %}
+    </select>
+{% endblock %}
